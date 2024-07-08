@@ -1,4 +1,8 @@
-# node-monitoring
+# Node Monitoring
+
+This repository provides a setup for monitoring Node.js applications using Prometheus and Grafana. Follow the instructions below to get started.
+
+## Running Prometheus
 
 ```
 docker run --rm -p 9090:9090 \
@@ -6,7 +10,7 @@ docker run --rm -p 9090:9090 \
   prom/prometheus:v2.20.1
 ```
 
-Prometheus Web UI on http://localhost:9090/graph
+## Running Grafana
 
 ```
 docker run --rm -p 3000:3000 \
@@ -17,8 +21,6 @@ docker run --rm -p 3000:3000 \
   grafana/grafana:7.1.5
 ```
 
-Grafana Web UI on http://localhost:3000
-
 Start the Docker containers:
 
 ```bash
@@ -28,3 +30,9 @@ docker-compose up -d
 - Prometheus should be accessible via [http://localhost:9090](http://localhost:9090)
 - Grafana should be accessible via [http://localhost:3000](http://localhost:3000)
 - Example Node.js server metrics for RED monitoring should be accessible via [http://localhost:8080/metrics](http://localhost:8080/metrics)
+
+To generate traffic for the Node.js app
+
+```
+ab -m POST -n 10000 -c 100 http://localhost:8080/order
+```
