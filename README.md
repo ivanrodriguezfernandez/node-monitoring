@@ -36,3 +36,6 @@ To generate traffic for the Node.js app
 ```
 ab -m POST -n 10000 -c 100 http://localhost:8080/order
 ```
+
+![image](https://github.com/ivanrodriguezfernandez/node-monitoring/assets/1223256/cd0cce0e-b30b-4a90-8593-6b804c10d82e)
+
